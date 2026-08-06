@@ -1,6 +1,19 @@
 {
   "rewrites": [
     {
+      "source": "/auth/:match*",
+      "destination": "https://api.smart-prep.co.in/auth/:match*"
+    },
+    {
+      "source": "/user/:match*",
+      "destination": "https://api.smart-prep.co.in/user/:match*"
+    },
+    {
+      "source": "/subjects/:match*",
+      "destination": "https://api.smart-prep.co.in/subjects/:match*"
+    },
+
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }
