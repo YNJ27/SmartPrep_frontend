@@ -169,6 +169,7 @@ const InputPage = () => {
         try {
           await fetch('/user/subjects', {
             method: 'POST',
+            credentials: 'include',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ subject, examType, Branch, Year, Pattern })
           });
@@ -187,6 +188,7 @@ const InputPage = () => {
       const payloadToSend = previewPayload;
       const response = await fetch('/subjects/import-pdfs', {
         method: 'POST',
+        credentials: 'include',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payloadToSend)
       });
@@ -208,7 +210,7 @@ const InputPage = () => {
       // Step 2 & 3: Poll the Status
       const intervalId = setInterval(async () => {
         try {
-          const statusRes = await fetch(`/subjects/status/${fileHash}`);
+          const statusRes = await fetch(`/subjects/status/${fileHash}`, { credentials: 'include' });
           if (statusRes.ok) {
             const data = await statusRes.json();
             if (data.status === 'completed') {

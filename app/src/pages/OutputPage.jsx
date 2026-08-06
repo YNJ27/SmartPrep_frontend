@@ -323,7 +323,7 @@ export default function TestingFrontend({ subjectId: propSubjectId }) {
         const params = new URLSearchParams({
           subject: subjectId, examType, Branch, Year, Pattern, unit_number: selectedUnit
         });
-        const res = await fetch(`/user/progress?${params}`);
+        const res = await fetch(`/user/progress?${params}`, { credentials: 'include' });
         if (!res.ok) return;
         const data = await res.json();
         
@@ -369,6 +369,7 @@ export default function TestingFrontend({ subjectId: propSubjectId }) {
     try {
       await fetch('/user/group-status', {
         method: 'POST',
+        credentials: 'include',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           subject: subjectId, examType, Branch, Year, Pattern,
@@ -400,6 +401,7 @@ export default function TestingFrontend({ subjectId: propSubjectId }) {
     try {
       await fetch('/user/question-progress', {
         method: 'POST',
+        credentials: 'include',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           subject: subjectId, examType, Branch, Year, Pattern,
@@ -421,6 +423,7 @@ export default function TestingFrontend({ subjectId: propSubjectId }) {
     try {
       await fetch('/user/group-reset', {
         method: 'POST',
+        credentials: 'include',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           subject: subjectId, examType, Branch, Year, Pattern,

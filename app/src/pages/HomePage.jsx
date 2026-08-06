@@ -15,7 +15,7 @@ const HomePage = () => {
   useEffect(() => {
     const fetchSubjects = async () => {
       try {
-        const res = await fetch('/user/subjects')
+        const res = await fetch('/user/subjects', { credentials: 'include' })
         if (res.ok) {
           const data = await res.json()
           setSubjects(data)
@@ -53,6 +53,7 @@ const HomePage = () => {
     try {
       const res = await fetch(`/user/subjects/${subjectToDelete.id}`, {
         method: 'DELETE',
+        credentials: 'include',
       })
       
       if (res.ok) {

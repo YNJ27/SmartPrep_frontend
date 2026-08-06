@@ -18,6 +18,7 @@ const ApiKeyPage = () => {
       if (mistralKey) {
         const mistralRes = await fetch('/user/api-keys', {
           method: 'POST',
+          credentials: 'include',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             provider: 'Mistral',
@@ -30,6 +31,7 @@ const ApiKeyPage = () => {
       if (googleKey) {
         const googleRes = await fetch('/user/api-keys', {
           method: 'POST',
+          credentials: 'include',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             provider: 'Google',

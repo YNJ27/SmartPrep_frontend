@@ -21,6 +21,7 @@ const ChangeGoogleApiKeyPage = () => {
       if (googleKey) {
         const res = await fetch('/user/api-keys', {
           method: 'POST',
+          credentials: 'include',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             provider: 'Google',
