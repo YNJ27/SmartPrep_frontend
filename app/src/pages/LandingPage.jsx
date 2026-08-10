@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import ScrollIcon from "../components/ScrollIcon";
 
 export default function LandingPage() {
   const navigate = useNavigate();
@@ -14,6 +15,7 @@ export default function LandingPage() {
           </div>
           <div className="nav-right">
             <span className="nav-link" onClick={() => document.getElementById("how-to-use").scrollIntoView({ behavior: "smooth" })}>How to Use</span>
+            <span className="nav-link" onClick={() => document.getElementById("about-me").scrollIntoView({ behavior: "smooth" })}>About Me</span>
             <span className="nav-link" onClick={() => navigate("/login")}>Login</span>
           </div>
         </div>
@@ -48,6 +50,11 @@ export default function LandingPage() {
             </div>
           </div>
         </div>
+        
+        <div className="scroll-indicator-container">
+          <span className="scroll-indicator-text">Scroll down</span>
+          <ScrollIcon className="scroll-indicator-icon" />
+        </div>
       </main>
 
       <section id="how-to-use" className="how-to-use-section">
@@ -80,8 +87,8 @@ export default function LandingPage() {
         </div>
       </section>
 
-      <section className="created-by-section">
-        <h2 className="created-by-title">Created By</h2>
+      <section id="about-me" className="created-by-section">
+        <h2 className="created-by-title">About Me</h2>
         <p className="created-by-subtitle">Developer • Builder • Learner</p>
         
         <div className="creator-card">
@@ -132,6 +139,9 @@ export default function LandingPage() {
           box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
           display: flex;
           justify-content: center;
+          position: sticky;
+          top: 0;
+          z-index: 1000;
         }
 
         .nav-container {
@@ -187,6 +197,54 @@ export default function LandingPage() {
           justify-content: center;
           width: 100%;
           padding: 60px 48px;
+          position: relative;
+        }
+
+        .scroll-indicator-container {
+          position: absolute;
+          bottom: 30px;
+          left: 50%;
+          transform: translateX(-50%);
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          color: #9ca3af; /* Gray color */
+          z-index: 10;
+          gap: 6px;
+        }
+
+        .scroll-indicator-text {
+          font-size: 14px;
+          font-weight: 500;
+        }
+
+        .scroll-indicator-icon {
+          width: 28px;
+          height: 28px;
+        }
+
+        .scroll-wheel {
+          animation: scrollDown 2s infinite ease-in-out;
+        }
+
+        @keyframes scrollDown {
+          0% {
+            transform: translate(267.375px, 111.125px);
+            opacity: 1;
+          }
+          40% {
+            transform: translate(267.375px, 190px);
+            opacity: 1;
+          }
+          60% {
+            transform: translate(267.375px, 190px);
+            opacity: 0;
+          }
+          100% {
+            transform: translate(267.375px, 111.125px);
+            opacity: 0;
+          }
         }
 
         .hero-container {
@@ -405,8 +463,8 @@ export default function LandingPage() {
         }
 
         .created-by-title {
-          font-size: 36px;
-          font-weight: 800;
+          font-size: 40px;
+          font-weight: 700;
           color: #111827;
           margin: 0 0 8px 0;
           text-align: center;
