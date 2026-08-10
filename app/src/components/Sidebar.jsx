@@ -67,6 +67,18 @@ const Sidebar = ({ currentPage }) => {
             </div>
           ))}
         </div>
+        <div className="sidebar-footer">
+          <a
+            href="https://github.com/YNJ27/SmartPrep_backend"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="sidebar-item"
+            style={{ textDecoration: 'none' }}
+          >
+            <img src="/github.png" alt="" className="sidebar-item-icon" />
+            <span className="sidebar-item-label">Star on GitHub</span>
+          </a>
+        </div>
       </div>
 
       {/* Logout Confirmation Popup */}

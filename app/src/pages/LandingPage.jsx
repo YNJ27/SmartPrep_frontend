@@ -80,6 +80,34 @@ export default function LandingPage() {
         </div>
       </section>
 
+      <section className="created-by-section">
+        <h2 className="created-by-title">Created By</h2>
+        <p className="created-by-subtitle">Developer • Builder • Learner</p>
+        
+        <div className="creator-card">
+          <div className="creator-avatar">Y</div>
+          <h3 className="creator-name">Yug Nitin Jain</h3>
+          <p className="creator-description">
+            A developer driven by curiosity and problem-solving, passionate about turning real-world challenges into efficient and impactful technological solutions.
+          </p>
+          
+          <div className="creator-socials">
+            <a href="mailto:yugnitin2468@gmail.com" className="social-btn">
+              <img src="/email.png" alt="Email" className="social-icon" />
+              Email
+            </a>
+            <a href="https://www.linkedin.com/in/yug-jain-851354284/" target="_blank" rel="noopener noreferrer" className="social-btn">
+              <img src="/linkedin.png" alt="LinkedIn" className="social-icon" />
+              LinkedIn
+            </a>
+            <a href="https://github.com/YNJ27" target="_blank" rel="noopener noreferrer" className="social-btn">
+              <img src="/github.png" alt="GitHub" className="social-icon" />
+              GitHub
+            </a>
+          </div>
+        </div>
+      </section>
+
       <style>{`
         * {
           box-sizing: border-box;
@@ -365,6 +393,109 @@ export default function LandingPage() {
           bottom: -16px;
           left: 50%;
           transform: translate(-50%, 50%);
+        }
+
+        .created-by-section {
+          width: 100%;
+          padding: 60px 48px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          background-color: #f8fafc;
+        }
+
+        .created-by-title {
+          font-size: 36px;
+          font-weight: 800;
+          color: #111827;
+          margin: 0 0 8px 0;
+          text-align: center;
+        }
+
+        .created-by-subtitle {
+          font-size: 16px;
+          color: #6b7280;
+          margin: 0 0 40px 0;
+          text-align: center;
+          font-weight: 500;
+        }
+
+        .creator-card {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          max-width: 600px;
+          width: 100%;
+        }
+
+        .creator-avatar {
+          width: 90px;
+          height: 90px;
+          border-radius: 50%;
+          background-color: #e6f2ff;
+          color: #007bff;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 36px;
+          font-weight: 700;
+          margin-bottom: 24px;
+        }
+
+        .creator-name {
+          font-size: 24px;
+          font-weight: 700;
+          color: #111827;
+          margin: 0 0 16px 0;
+        }
+
+        .creator-description {
+          font-size: 16px;
+          line-height: 1.6;
+          color: #4b5563;
+          text-align: center;
+          margin: 0 0 32px 0;
+        }
+
+        .creator-socials {
+          display: flex;
+          gap: 16px;
+          justify-content: center;
+          flex-wrap: wrap;
+        }
+
+        .social-btn {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          padding: 10px 20px;
+          border-radius: 20px;
+          border: 1px solid #e5e7eb;
+          background-color: #ffffff;
+          color: #374151;
+          font-weight: 600;
+          font-size: 14px;
+          text-decoration: none;
+          transition: all 0.2s ease;
+        }
+
+        .social-icon {
+          width: 18px;
+          height: 18px;
+          object-fit: contain;
+          transition: all 0.2s ease;
+        }
+
+        .social-btn:hover {
+          border-color: #007bff;
+          color: #007bff;
+          background-color: #f0f8ff;
+          box-shadow: 0 4px 12px rgba(0, 123, 255, 0.1);
+        }
+
+        .social-btn:hover .social-icon {
+          /* CSS filter to approximate the #007bff blue from black */
+          filter: invert(36%) sepia(85%) saturate(2317%) hue-rotate(200deg) brightness(101%) contrast(106%);
         }
 
         @media (max-width: 850px) {

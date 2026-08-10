@@ -30,6 +30,12 @@
   gap: 4px;
 }
 
+.sidebar-footer {
+  margin-top: auto;
+  border-top: 1px solid #e5e7eb;
+  padding: 12px 12px 0;
+}
+
 .sidebar-item {
   display: flex;
   align-items: center;
