@@ -75,7 +75,10 @@ const Sidebar = ({ currentPage }) => {
             className="sidebar-item"
             style={{ textDecoration: 'none' }}
           >
-            <img src="/github.png" alt="" className="sidebar-item-icon" />
+            <div className="github-icon-container">
+              <img src="/github.png" alt="" className="sidebar-item-icon github-icon" />
+              <div className="github-star-badge">★</div>
+            </div>
             <span className="sidebar-item-label">Star on GitHub</span>
           </a>
         </div>
