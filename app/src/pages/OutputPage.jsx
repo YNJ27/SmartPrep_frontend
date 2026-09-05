@@ -605,6 +605,8 @@ export default function TestingFrontend({ subjectId: propSubjectId }) {
           background: var(--panel);
           border-radius: var(--radius);
           border: 1px solid var(--stroke);
+          position: relative;
+          z-index: 1;
           box-shadow: 0 4px 12px var(--shadow);
           padding: 20px;
           display: flex;
@@ -613,6 +615,10 @@ export default function TestingFrontend({ subjectId: propSubjectId }) {
           min-height: 540px;
           animation: float-in 0.6s ease both;
           scroll-margin-top: 84px;
+        }
+
+        .section:has(.menu-popover) {
+          z-index: 2;
         }
 
         .section:nth-child(2) {
@@ -741,7 +747,7 @@ export default function TestingFrontend({ subjectId: propSubjectId }) {
           border-radius: 12px;
           border: 1px solid var(--stroke);
           box-shadow: 0 12px 22px rgba(26, 26, 26, 0.12);
-          z-index: 10;
+          z-index: 1000;
         }
 
         .menu {
